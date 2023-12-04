@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="styles3.css">
+
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">>Coles Store</div>
+            <div class="burger-menu" onclick="toggleMenu()">&#9776;</div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="profile.html">Profile</a></li>
+                <li><a href="orders.html">My Orders</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li class="dropdown" id="products-dropdown><a href="#"> <button class="dropbtn">Products</button>                            <div class="dropdown-content">
+                    <a href="bakery.html">Bakery</a>
+                    <a href="fruits.html">Fruits and Veg</a>
+                    <a href="winter.html">Winter</a>
+                    <a href="grocery.html">grocery</a>
+                </div></a></li>
+                <li><a href="discounts.html">Discounts</a></li>
+                <li><a href="cart.html">Cart</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="mobile-nav">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="profile.html">Profile</a></li>
+            <li><a href="orders.html">My Orders</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li>
+                <div class="dropdown" id="products-dropdown">
+                    <button class="dropbtn">Products</button>
+                    <div class="dropdown-content">
+                        <a href="bakery.html">Bakery</a>
+                        <a href="fruits.html">Fruits and Veg</a>
+                        <a href="winter.html">Winter</a>
+                        <a href="grocery.html">grocery</a>
+                    </div>
+                </div>
+            </li>
+            <li><a href="discounts.html">Discounts</a></li>
+            <li><a href="cart.html">Cart</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+    </div>
+    <div class="thank-container">
+        <h2>Thank You!</h2>
+        <p>Your message has been received. We appreciate your contact information.</p>
+
+        <h3>Contact Information</h3>
+        <ul id="contact-info"></ul>
+    </div>
+    <script>
+        function toggleMenu() {
+            var mobileNav = document.querySelector(".mobile-nav");
+            if (mobileNav.style.display === "block") {
+                mobileNav.style.display = "none";
+            } else {
+                mobileNav.style.display = "block";
+            }
+        }
+        // Retrieve and display stored data
+        const contactData = JSON.parse(sessionStorage.getItem("contactFormData"));
+        const contactInfoList = document.getElementById("contact-info");
+
+        if (contactData) {
+            for (const key in contactData) {
+                const listItem = document.createElement("li");
+                listItem.innerHTML = `<strong>${key}:</strong> ${contactData[key]}`;
+                contactInfoList.appendChild(listItem);
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" type="text/css" href="style6.css">
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">>Coles Store</div>
+            <div class="burger-menu" onclick="toggleMenu()">&#9776;</div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="profile.html">Profile</a></li>
+                <li><a href="orders.html">My Orders</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li class="dropdown" id="products-dropdown><a href="#"> <button class="dropbtn">Products</button>                            <div class="dropdown-content">
+                    <a href="bakery.html">Bakery</a>
+                    <a href="fruits.html">Fruits and Veg</a>
+                    <a href="winter.html">Winter</a>
+                    <a href="grocery.html">grocery</a>
+                </div></a></li>
+                <li><a href="discounts.html">Discounts</a></li>
+                <li><a href="cart.html">Cart</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="mobile-nav">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="profile.html">Profile</a></li>
+            <li><a href="orders.html">My Orders</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li>
+                <div class="dropdown" id="products-dropdown">
+                    <button class="dropbtn">Products</button>
+                    <div class="dropdown-content">
+                        <a href="bakery.html">Bakery</a>
+                        <a href="fruits.html">Fruits and Veg</a>
+                        <a href="winter.html">Winter</a>
+                        <a href="grocery.html">grocery</a>
+                    </div>
+                </div>
+            </li>
+            <li><a href="discounts.html">Discounts</a></li>
+            <li><a href="cart.html">Cart</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+    </div>
+    <h1 class="red-text">My Orders</h1>
+
+    <div class="order-box">
+        <div class="order-details">
+            <h2 class="red-text">Order #12345</h2>
+            <p class="grey-text">Order Date: 2023-01-15</p>
+            <p class="grey-text">Total Amount: $50.00</p>
+        </div>
+        <button class="review-button red-button" onclick="openReview()">Review Product</button>
+    </div>
+
+    <div class="order-box">
+        <div class="order-details">
+            <h2 class="red-text">Order #67890</h2>
+            <p class="grey-text">Order Date: 2023-02-20</p>
+            <p class="grey-text">Total Amount: $75.00</p>
+        </div>
+        <button class="review-button red-button" onclick="openReview()">Review Product</button>
+    </div>
+    <script>
+        function toggleMenu() {
+        var mobileNav = document.querySelector(".mobile-nav");
+        if (mobileNav.style.display === "block") {
+            mobileNav.style.display = "none";
+        } else {
+            mobileNav.style.display = "block";
+        }
+    }
+    function openReview() {
+            window.open("review.html", "_blank");
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,62 @@
+/* Add your CSS styles for responsive design here */
+.breadcrumb {
+    padding: 10px;
+    background-color: #f2f2f2;
+    text-align: center;
+}
+
+.red-link {
+    color: red;
+}
+
+.red-text {
+    color: red;
+    text-align: center;
+}
+
+.grey-text {
+    color: grey;
+}
+
+.products {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.product {
+    margin: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    display: inline-block;
+    width: 30%;
+    text-align: center;
+}
+
+.product img {
+    max-width: 100%;
+}
+
+.red-button {
+    background-color: red;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.red-button {
+    background-color: red;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s; /* Add a transition for smooth color change */
+}
+
+/* Apply the color change when the button is clicked */
+.red-button:active {
+    background-color: darkred;
+}

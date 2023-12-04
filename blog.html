@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <link rel="stylesheet" type="text/css" href="style7.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">Coles Retail</div>
+            <div class="burger-menu" onclick="toggleMenu()">&#9776;</div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="profile.html">Profile</a></li>
+                <li><a href="orders.html">My Orders</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li class="dropdown" id="products-dropdown><a href="#"> <button class="dropbtn">Products</button>                            <div class="dropdown-content">
+                    <a href="bakery.html">Bakery</a>
+                    <a href="fruits.html">Fruits and Veg</a>
+                    <a href="winter.html">Winter</a>
+                    <a href="grocery.html">grocery</a>
+                </div></a></li>
+                <li><a href="discounts.html">Discounts</a></li>
+                <li><a href="cart.html">Cart</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="mobile-nav">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="profile.html">Profile</a></li>
+            <li><a href="orders.html">My Orders</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li>
+                <div class="dropdown" id="products-dropdown">
+                    <button class="dropbtn">Products</button>
+                    <div class="dropdown-content">
+                        <a href="bakery.html">Bakery</a>
+                        <a href="fruits.html">Fruits and Veg</a>
+                        <a href="winter.html">Winter</a>
+                        <a href="grocery.html">grocery</a>
+                    </div>
+                </div>
+            </li>
+            <li><a href="discounts.html">Discounts</a></li>
+            <li><a href="cart.html">Cart</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+    </div>
+    <h1 class="red-text">Blog</h1>
+    <div class="w3-bar w3-black">
+        <button class="w3-bar-item w3-button" onclick="openBlog('article')">Article</button> 
+        <button class="w3-bar-item w3-button" onclick="openBlog('recipe')">Recipie</button> 
+        <button class="w3-bar-item w3-button" onclick="openBlog('idea')">Idea</button>
+      </div>
+    <div class="blog-container">
+        <!-- Blog Item 1 -->
+        <div class="blog-item" id="article" style="display: none;>
+            <img src="article-image-1.jpg" alt="Article Image">
+            <div class="blog-content">
+                <h2 class="red-text">Article Title 1</h2>
+                <p class="grey-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse fringilla.</p>
+                <a class="red-button" href="#">Read More</a>
+            </div>
+        </div>
+        <div class="blog-item" id="recipe" style="display: none;>
+            <img src="recipe-image-1.jpg" alt="Recipe Image">
+            <div class="blog-content">
+                <h2 class="red-text">Recipe Title 1</h2>
+                <p class="grey-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse fringilla.</p>
+                <a class="red-button" href="recipie1.html">View Recipe</a>
+            </div>
+            <div class="blog-content">
+                <h2 class="red-text">Recipe Title 2</h2>
+                <p class="grey-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse fringilla.</p>
+                <a class="red-button" href="recipie1.html">View Recipe</a>
+            </div>
+            <div class="blog-content">
+                <h2 class="red-text">Recipe Title 3</h2>
+                <p class="grey-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse fringilla.</p>
+                <a class="red-button" href="recipie1.html">View Recipe</a>
+            </div>
+        </div>
+        <div class="blog-item" id="idea" style="display: none;">
+            <img src="idea-image-1.jpg" alt="Idea Image">
+            <div class="blog-content">
+                <h2 class="red-text">Idea Title 1</h2>
+                <p class="grey-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse fringilla.</p>
+                <a class="red-button" href="#">Explore Idea</a>
+            </div>
+            <div class="blog-content">
+                <h2 class="red-text">Idea Title 2</h2>
+                <p class="grey-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse fringilla.</p>
+                <a class="red-button" href="#">Explore Idea</a>
+            </div>
+        </div>
+    </div>
+    <script>
+        function toggleMenu() {
+        var mobileNav = document.querySelector(".mobile-nav");
+        if (mobileNav.style.display === "block") {
+            mobileNav.style.display = "none";
+        } else {
+            mobileNav.style.display = "block";
+        }
+    }
+        function openBlog(blogtype) {
+        var i;
+        var x = document.getElementsByClassName("blog-item");
+        for (i = 0; i < x.length; i++) {
+            x[i].style.display = "none"; 
+        }
+        document.getElementById(blogtype).style.display = "block"; 
+}
+    </script>
+</body>
+</html>

@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="styles2.css">
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">Coles Retail</div>
+            <div class="burger-menu" onclick="toggleMenu()">&#9776;</div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="profile.html">Profile</a></li>
+                <li><a href="orders.html">My Orders</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li class="dropdown" id="products-dropdown><a href="#"> <button class="dropbtn">Products</button>                            <div class="dropdown-content">
+                    <a href="bakery.html">Bakery</a>
+                    <a href="fruits.html">Fruits and Veg</a>
+                    <a href="winter.html">Winter</a>
+                    <a href="grocery.html">grocery</a>
+                </div></a></li>
+                <li><a href="discounts.html">Discounts</a></li>
+                <li><a href="cart.html">Cart</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="mobile-nav">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="profile.html">Profile</a></li>
+            <li><a href="orders.html">My Orders</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li>
+                <div class="dropdown" id="products-dropdown">
+                    <button class="dropbtn">Products</button>
+                    <div class="dropdown-content">
+                        <a href="bakery.html">Bakery</a>
+                        <a href="fruits.html">Fruits and Veg</a>
+                        <a href="winter.html">Winter</a>
+                        <a href="grocery.html">grocery</a>
+                    </div>
+                </div>
+            </li>
+            <li><a href="discounts.html">Discounts</a></li>
+            <li><a href="cart.html">Cart</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+    </div>
+    <div class="contact-container">
+        <h2>Contact Us</h2>
+        <form id="contact-form">
+            <div class="form-group">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="phone">Phone Number:</label>
+                <input type="tel" id="phone" name="phone" required>
+            </div>
+            <div class="form-group">
+                <label for="age">Age:</label>
+                <input type="number" id="age" name="age" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email Address:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+    <script>
+        function toggleMenu() {
+            var mobileNav = document.querySelector(".mobile-nav");
+            if (mobileNav.style.display === "block") {
+                mobileNav.style.display = "none";
+            } else {
+                mobileNav.style.display = "block";
+            }
+        }
+        const contactForm = document.getElementById("contact-form");
+
+        contactForm.addEventListener("submit", function (e) {
+            e.preventDefault();
+
+            // Get form values
+            const name = document.getElementById("name").value;
+            const phone = document.getElementById("phone").value;
+            const age = document.getElementById("age").value;
+            const email = document.getElementById("email").value;
+
+            // Validation checks
+            if (!isValidName(name)) {
+                alert("Please enter a valid name.");
+                return;
+            }
+
+            if (!isValidPhoneNumber(phone)) {
+                alert("Please enter a valid phone number.");
+                return;
+            }
+
+            if (!isValidAge(age)) {
+                alert("Please enter a valid age.");
+                return;
+            }
+
+            if (!isValidEmail(email)) {
+                alert("Please enter a valid email address.");
+                return;
+            }
+
+            // Data storage in SessionStorage
+            const formData = { name, phone, age, email };
+            sessionStorage.setItem("contactFormData", JSON.stringify(formData));
+
+            // Redirect to the Thank You page
+            window.location.href = "thank.html";
+        });
+
+        function isValidName(name) {
+        // Name should contain only letters, and it can have spaces, hyphens, or apostrophes
+        // The name must be between 2 and 50 characters in length
+        const nameRegex = /^[A-Za-z\- ']{2,50}$/;
+        return nameRegex.test(name);
+    }
+
+    function isValidPhoneNumber(phone) {
+        // Australian phone number format (allowing for optional country code and spaces)
+        const phoneRegex = /^(?:\+61|0)[2-4789](?:[ -]?[0-9]){8}$/;
+        return phoneRegex.test(phone);
+    }
+
+    function isValidAge(age) {
+        // Age should be a number between 1 and 120
+        const ageNumber = parseInt(age, 10);
+        return !isNaN(ageNumber) && ageNumber >= 1 && ageNumber <= 120;
+    }
+
+    function isValidEmail(email) {
+        // Basic email validation
+        const emailRegex = /^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$/;
+        return emailRegex.test(email);
+    }
+
+    </script>
+</body>
+</html>

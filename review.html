@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" type="text/css" href="styles6.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+    <nav class="breadcrumb">
+        <a href="index.html" class="red-link">Home</a> &gt; 
+        <a href="order.html" class="red-link">My Orders</a> &gt; 
+        <span class="red-text">Order #12345 Review</span>
+    </nav>
+    <h1 class="red-text">Review Product</h1>
+
+    <div class="review-questions">
+        <h2 class="red-text">Order #12345 Review</h2>
+        <p class="grey-text">Product Name: Sample Product</p>
+
+        <!-- Add your review questions here -->
+        <div class="review-question">
+            <p class="grey-text">How would you rate this product?</p>
+            <input type="range" id="rating" name="rating" min="0" max="5" step="0.5">
+            <span id="rating-value" class="red-text">3</span>
+        </div>
+
+        <div class="review-question">
+            <p class="grey-text">Would you recommend this product to others?</p>
+            <input type="radio" id="recommend-yes" name="recommend" value="yes">
+            <label for="recommend-yes">Yes</label>
+            <input type="radio" id="recommend-no" name="recommend" value="no">
+            <label for="recommend-no">No</label>
+        </div>
+
+        <div class="review-question">
+            <p class="grey-text">Write your review:</p>
+            <textarea id="review-text" name="review-text" rows="4"></textarea>
+        </div>
+
+        <button class="red-button">Submit Review</button>
+    </div>
+</body>
+</html>

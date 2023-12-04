@@ -1,0 +1,34 @@
+/* Add your CSS styles for responsive design here */
+/* ... other CSS rules ... */
+
+.red-text {
+    color: red;
+    text-align: center;
+}
+
+.grey-text {
+    color: grey;
+}
+
+.order-box {
+    border: 1px solid #ccc;
+    padding: 20px;
+    margin: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.review-button {
+    background-color: red;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+/* Apply the color change when the button is clicked */
+.review-button:active {
+    background-color: darkred;
+}
